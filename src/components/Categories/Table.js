@@ -5,7 +5,6 @@ import API from '../../api/jservice';
 
 const Table = (props) => {
   const [categories, setCategories] = useState(null);
-  console.log('categories', categories);
   const { page } = useParams();
 
   useEffect(() => {
