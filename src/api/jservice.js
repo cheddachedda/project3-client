@@ -1,8 +1,13 @@
 import axios from 'axios';
 
 const API = {
-  getCategories(count, offset) {
-    return axios('http://jservice.io/api/categories', { params: { count, offset }});
+  getCategories(page, count=100) {
+    return axios('http://jservice.io/api/categories', {
+      params: {
+        count,
+        offset: (page - 1) * count
+      }
+    });
   }
 };
 
