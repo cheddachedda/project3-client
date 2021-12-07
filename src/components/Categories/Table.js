@@ -4,9 +4,10 @@ import { useParams } from 'react-router-dom';
 import API from '../../api/jservice';
 
 const Table = (props) => {
-  const [categories, setCategories] = useState(null);
+  const [ categories, setCategories ] = useState(null);
   const { page } = useParams();
 
+  // Retrieves 100 categories from jservice.io, offset by the URL's :page parameter
   useEffect(() => {
     API.getCategories(page).then((response) => {
       setCategories(response.data);
@@ -38,7 +39,8 @@ const Table = (props) => {
 };
 
 const Row = ({ category }) => {
-  const { id, title, clues_count } = category;
+  let { id, title, clues_count } = category;
+  title = title.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
 
   return (
     <tr>
