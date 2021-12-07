@@ -8,6 +8,15 @@ const API = {
         offset: (page - 1) * count
       }
     });
+  },
+
+  getClue(categoryID, value) {
+    return axios('http://jservice.io/api/clues', {
+      params: {
+        category: categoryID,
+        value
+      }
+    });
   }
 };
 
