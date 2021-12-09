@@ -12,7 +12,7 @@ const Table = (props) => {
     API.getCategories(page).then((response) => {
       setCategories(response.data);
     })
-  }, [ categories ]);
+  }, [ page ]);
 
   if (categories === null) {
     return (
@@ -30,7 +30,7 @@ const Table = (props) => {
         </thead>
 
         <tbody>
-          { categories.map((cat) => <Row category={ cat } />) }
+          { categories.map((cat) => <Row key={ cat.id } category={ cat } />) }
         </tbody>
 
       </table>
