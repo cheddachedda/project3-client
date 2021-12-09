@@ -13,11 +13,40 @@ body {
 }
 
 main {
-  /* min-height: 100vh; */
+  margin: 0 auto;
+  max-width: 1280px;
 }
 
 th, td {
   border: 1px solid grey;
   font-family: monospace;
   padding: 0.2rem 0.4rem;
+}
+
+.board {
+  background-color: black;
+  border: 3px solid black;
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cell {
+  background-color: #051E9B;
+  border-radius: 0.25em;
+  color: gold;
+  flex-grow: 1;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.category-title {
+  color: white;
 }
